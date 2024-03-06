@@ -91,7 +91,7 @@ class DUSGuideSplitter:
         chapter = re.search("Chapter [0-9]", content).group()
         return part, chapter
 
-
+"""
 class DUSUpdateSplitter:
     def extract_chunks:
         pass
@@ -100,4 +100,4 @@ class DUSUpdateSplitter:
         pass
     
     def extract_effective_date:
-        pass
+        pass"""

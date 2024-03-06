@@ -7,5 +7,38 @@ Collecting usage statistics. To deactivate, set browser.gatherUsageStats to Fals
   Network URL: http://169.255.254.1:8501
   External URL: http://54.83.37.5:8501
 
+2024-03-06 17:15:32.960 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 535, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/dus-guide-chatbot/chat-bedrock.py", line 13, in <module>
+    from splitters import DUSGuideSplitter
+  File "/home/sagemaker-user/dus-guide-chatbot/splitters.py", line 96
+    def extract_chunks:
+                      ^
+SyntaxError: invalid syntax
+2024-03-06 17:17:15.074 Uncaught app exception
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/scriptrunner/script_runner.py", line 535, in _run_script
+    exec(code, module.__dict__)
+  File "/home/sagemaker-user/dus-guide-chatbot/chat-bedrock.py", line 94, in <module>
+    main()
+  File "/home/sagemaker-user/dus-guide-chatbot/chat-bedrock.py", line 91, in main
+    process()
+  File "/home/sagemaker-user/dus-guide-chatbot/chat-bedrock.py", line 54, in process
+    knowledge_base = buildKnowledgeBase()
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/caching/cache_utils.py", line 212, in wrapper
+    return cached_func(*args, **kwargs)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/caching/cache_utils.py", line 241, in __call__
+    return self._get_or_create_cached_value(args, kwargs)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/caching/cache_utils.py", line 268, in _get_or_create_cached_value
+    return self._handle_cache_miss(cache, value_key, func_args, func_kwargs)
+  File "/opt/conda/lib/python3.9/site-packages/streamlit/runtime/caching/cache_utils.py", line 324, in _handle_cache_miss
+    computed_value = self._info.func(*func_args, **func_kwargs)
+  File "/home/sagemaker-user/dus-guide-chatbot/chat-bedrock.py", line 19, in buildKnowledgeBase
+    documents = loader.load()
+  File "/opt/conda/lib/python3.9/site-packages/langchain_community/document_loaders/directory.py", line 146, in load
+    raise FileNotFoundError(f"Directory not found: '{self.path}'")
+FileNotFoundError: Directory not found: '/home/sagemaker-user/docs/'
 /opt/conda/lib/python3.9/site-packages/langchain_core/_api/deprecation.py:117: LangChainDeprecationWarning: The function `run` was deprecated in LangChain 0.1.0 and will be removed in 0.2.0. Use invoke instead.
   warn_deprecated(

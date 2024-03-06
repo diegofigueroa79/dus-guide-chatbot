@@ -15,7 +15,7 @@ from splitters import DUSGuideSplitter
 
 @st.cache_resource
 def buildKnowledgeBase():
-    loader = DirectoryLoader('/home/sagemaker-user/docs/', glob='**/*.pdf')
+    loader = DirectoryLoader('/home/sagemaker-user/dus-guide-chatbot/docs/', glob='**/*.pdf')
     documents = loader.load()
     text_splitter = DUSGuideSplitter()
     texts = text_splitter.split_documents(documents)
